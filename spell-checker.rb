@@ -2,13 +2,13 @@ require 'spellchecker'
 require 'pry'
 
 def programming_variable?(word)
-	counter, camel_case = 0, false
+	camel_case = false
 	word.split("").map do |letter| 
 		capital_letter = (letter == letter.upcase)
-		counter += 1 if capital_letter
 		camel_case = true if capital_letter and word.index(letter) > 0
+		break if camel_case 
 	end
-	return (counter > 1 or camel_case ? true : false)
+	return camel_case
 end
 
 
