@@ -17,24 +17,17 @@ end
 
 
 @acceptable_words = [
-	"Mahrt", 
-	"Kaleda",
-	"Yuliya",
-	"Kerner", 
+
+	"Mathe", 
 	"mins", 
 	"xml", 
 	"interpolator", 
-	"RecyclerView",
-	"RecyclerViews",
 	"GitHub", 
-	"Ayinde",
-	"Recycler", 
 	"img",
 	"src",
 	"comparator",
 	"programmatically",
-	"gif",
-	"ViewGroup", 
+	"gif", 
 	"readme", 
 	"RDs", 
 	"UI", 
@@ -56,16 +49,15 @@ end
 	"api",
 	"namespace",
 	"Gmail", 
-	"getter",
-	"Getter",
 	"Instantiation",
 	"instantiation",
-	"getters",
+	"getter",
 	"refactor",
 	"int",
 	"subclasses",
 	"Subclasses",
 	"prepend",
+	"getter",
 	"setter",
 	"superclass",
 	"runtime",
@@ -85,57 +77,13 @@ end
 	"URI",
 	"uncomment",
 	"pseudocode",
-	"Missoula",
-	"Bartz",
 	"polymorphism",
 	"Polymorphism",
 	"whiteboarding",
 	"Whiteboarding",
-	"toolbar",
-	"Toolbar",
-	"login",
-	"remediate", 
-	"styleguide",
-	"Immersive",
-	"toolbars",
-	"Toolbars", 
-	"boolean",
-	"Boolean",
-	"subclassing",
-	"Subclassing", 
-	"Lifecycle", 
-	"Workflow",
-	"workflow",
-	"rebase",
-	"Rebase",
-	"rebasing",
-	"Rebasing",
-	"Filesystem",
-	"filesystem",
-	"mkdir",
-	"cp",
-	"cd",
-	"chmod",
-	"bashrc",
-	"sublime",
-	"subl",
-	"hardcoded",
-	"sublist",
-	"json",
-	"params",
-	"inbox", 
-	"analytics",
-	"Analytics",
 	"Immersive",
 	"immersive",
-	"middleware",
-	"refactor",
-	"templating",
-	"foundational",
-	"prepended",
-	"codebases",
-	"Repo"
-
+	"middleware"
 
 ]
 
@@ -158,9 +106,9 @@ end
 	"="
 ]
 
-log_file  = File.new("adi-log.txt", "w")
+log_file  = File.new("wdi-log.txt", "w")
 
-Dir.glob('../../ga-adi/adi-curriculum/**/*.md') do |file|
+Dir.glob('../../ga-wdi/wdi/**/*.md') do |file|
 	File.open(file).each_with_index do |line, index|
 		line.split(" ").each do |word|
 			puts "Spell checking..."
