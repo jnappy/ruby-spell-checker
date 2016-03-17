@@ -1,7 +1,7 @@
-# run in terminal export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
 require 'spellchecker'
 require 'pry'
+
+system("export PATH=/opt/local/bin:/opt/local/sbin:$PATH")
 
 ERROR_MESSAGE = "Error: The word "" is invalid. Empty string."
 
@@ -161,6 +161,7 @@ end
 log_file  = File.new("adi-log.txt", "w")
 
 Dir.glob('../../ga-adi/adi-curriculum/**/*.md') do |file|
+	binding.pry
 	File.open(file).each_with_index do |line, index|
 		line.split(" ").each do |word|
 			puts "Spell checking..."
