@@ -1,9 +1,9 @@
 require 'spellchecker'
 require 'pry'
 
-system("export PATH=/opt/local/bin:/opt/local/sbin:$PATH")
+system "export PATH=/opt/local/bin:/opt/local/sbin:$PATH"
 
-ERROR_MESSAGE = "Error: The word "" is invalid. Empty string."
+@ERROR_MESSAGE = "Error: The word "" is invalid. Empty string."
 
 def programming_variable?(word)
 	camel_case = false
@@ -160,14 +160,13 @@ end
 
 log_file  = File.new("adi-log.txt", "w")
 
-Dir.glob('../../ga-adi/adi-curriculum/**/*.md') do |file|
-	binding.pry
+Dir.glob('../../ga-adi/adi-course-materials/**/*.md') do |file|
 	File.open(file).each_with_index do |line, index|
 		line.split(" ").each do |word|
 			puts "Spell checking..."
 			results = Spellchecker.check(word) unless @acceptable_words.include?(word) or programming_variable?(word) or @acceptable_characters.any? { |character| word.include?(character) } or file.include?("template")
 			if results  
-				log_file.puts "#{word}: #{file} | #{index} | #{line} " unless results.first[:correct] or results == ERROR_MESSAGE
+				log_file.puts "#{word}: #{file} | #{index} | #{line} " unless results.first[:correct] or results == @ERROR_MESSAGE
 
 			end
 		end
